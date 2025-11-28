@@ -1,159 +1,80 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact Us — WhatsApp</title>
-  <meta name="description" content="Click this page to connect with us instantly on WhatsApp." />
-  <!-- Open Graph (Facebook) -->
-  <meta property="og:title" content="Easy Contact — Join Us on WhatsApp" />
-  <meta property="og:description" content="Click the button below to start a WhatsApp chat directly for more information." />
-  <meta property="og:type" content="website" />
-  <style>
-    /* Vibrant, responsive, and modern styling */
-    :root {
-      --bg: #f0f4f8;
-      --card: #ffffff;
-      --accent: #25D366; /* WhatsApp green */
-      --text: #1a202c;
-      --muted: #6b7280;
-      --highlight: #34d399; /* Lighter green for accents */
-      --shadow: rgba(0, 0, 0, 0.1);
-      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    }
-    html, body {
-      height: 100%;
-      margin: 0;
-      background: linear-gradient(180deg, #ecfdf5 0%, var(--bg) 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      color: var(--text);
-    }
-    .card {
-      width: 100%;
-      max-width: 720px;
-      background: var(--card);
-      border-radius: 16px;
-      box-shadow: 0 10px 40px var(--shadow);
-      padding: 32px;
-      text-align: center;
-      transition: transform 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-    }
-    h1 {
-      margin: 0 0 12px;
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--text);
-    }
-    p.lead {
-      margin: 0 0 24px;
-      color: var(--muted);
-      line-height: 1.6;
-      font-size: 1.1rem;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      padding: 14px 24px;
-      background: var(--accent);
-      color: white;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1.1rem;
-      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
-      transition: background 0.3s ease, transform 0.2s ease;
-    }
-    .btn:hover {
-      background: #20b558;
-      transform: scale(1.05);
-    }
-    .phone {
-      margin-top: 16px;
-      color: var(--muted);
-      display: block;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: color 0.3s ease;
-    }
-    .phone:hover {
-      color: var(--accent);
-    }
-    .note {
-      margin-top: 20px;
-      font-size: 0.9rem;
-      color: var(--muted);
-      line-height: 1.5;
-    }
-    /* Responsive design */
-    @media (max-width: 420px) {
-      .card {
-        padding: 24px;
-        border-radius: 12px;
-      }
-      h1 {
-        font-size: 1.4rem;
-      }
-      .btn {
-        width: 100%;
-        justify-content: center;
-        font-size: 1rem;
-      }
-      p.lead {
-        font-size: 1rem;
-      }
-    }
-    /* Animation for vibrant feel */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .card {
-      animation: fadeIn 0.5s ease-out;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Clickable Image</title>
+    <style>
+        /* CSS سٹائلنگ */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        /* تصویر کو کنٹرول کرنے والا سٹائل */
+        .image-container {
+            width: 100%;
+            text-align: center;
+        }
+
+        /* تصویر پر کلک کے لیے لنک کا سٹائل */
+        .image-link {
+            display: inline-block;
+            line-height: 0;
+        }
+
+        /* تصویر کا اپنا سٹائل */
+        .responsive-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            cursor: pointer;
+            /* نئی اینیمیشن شامل کی گئی ہے */
+            animation: pulse 2s infinite; /* 'pulse' نامی اینیمیشن 2 سیکنڈ میں چلے گی اور بار بار دہرائی جائے گی */
+        }
+
+        /* اینیمیشن کی تعریف: ہلکا سا جھٹکا یا ابھار کا اثر */
+        @keyframes pulse {
+            0% {
+                transform: scale(1); /* نارمل سائز */
+                box-shadow: 0 0 0 rgba(0, 0, 0, 0.0);
+            }
+            50% {
+                transform: scale(1.02); /* تھوڑا سا بڑا سائز (1.02 گنا) */
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); /* ہلکا سا شیڈو */
+            }
+            100% {
+                transform: scale(1); /* واپس نارمل سائز */
+                box-shadow: 0 0 0 rgba(0, 0, 0, 0.0);
+            }
+        }
+
+        /* جب ماؤس تصویر پر آئے تو ہلکا سا اثر (اختیاری) */
+        .responsive-image:hover {
+            opacity: 0.9;
+        }
+    </style>
 </head>
 <body>
-  <div class="card" role="main" aria-labelledby="main-title">
-    <h1 id="main-title">Contact Us for More Info or Orders</h1>
-    <p class="lead">We're here to assist you — click the button below to start a WhatsApp chat directly.</p>
 
-    <!-- WhatsApp link -->
-    <a class="btn" id="waButton" href="https://wa.me/923007472779?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services" target="_blank" rel="noopener noreferrer">
-      <!-- WhatsApp icon (inline SVG) -->
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-        <path d="M20.52 3.48C18.1 1.06 14.92 0 11.64 0 5.35 0 .48 4.86.48 11.15c0 1.96.51 3.87 1.48 5.56L0 24l7.53-1.93c1.63.45 3.33.68 5.11.68 6.29 0 11.16-4.87 11.16-11.16 0-3.28-1.06-6.47-3.08-8.76zM11.64 21.18c-1.6 0-3.17-.43-4.54-1.24l-.32-.19-4.47 1.15 1.2-4.12-.21-.34C2.06 14.18 1.56 12.7 1.56 11.14 1.56 6.13 6.12 1.56 11.64 1.56c2.72 0 5.22 1.04 7.11 2.93 1.9 1.9 2.95 4.42 2.95 7.12 0 5.5-4.48 9.57-9.6 9.57z" fill="currentColor"/>
-      </svg>
-      Join Us on WhatsApp
-    </a>
+    <div class="image-container">
+        <a 
+            href="https://immediate-salmon-lcmtodyw2d.edgeone.dev/" 
+            target="_blank" 
+            class="image-link"
+        >
+            <img 
+                src="https://i.ibb.co/J9Tx9tG/20251129-003801.png" 
+                alt="Click to proceed" 
+                class="responsive-image"
+            >
+        </a>
+    </div>
 
-    <!-- Clickable phone number -->
-    <a class="phone" href="tel:+923007472779">Phone: +92 300 7472779</a>
-
-    <div class="note">Note: On mobile, WhatsApp will open directly. On desktop, WhatsApp Web will open.</div>
-  </div>
-
-  <!-- Optional: Facebook Pixel (uncomment and add your Pixel ID if needed) -->
-  <!--
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n; n.push=n; n.loaded=!0; n.version='2.0';
-    n.queue=[]; t=b.createElement(e); t.async=!0;
-    t.src=v; s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'YOUR_PIXEL_ID_HERE');
-    fbq('track', 'PageView');
-  </script>
-  -->
 </body>
 </html>
